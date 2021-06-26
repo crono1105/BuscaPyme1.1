@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directing | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/barfiller.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body class="ov-hid">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header header--normal">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/footer-logo.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'index' %}">Inicio</a></li>
+                                <li class="active"><a href="{% url 'listing' %}">Pymes</a></li>
+                                <li><a href="#">Categorias</a></li>
+                                <li><a href="#">Paginas</a>
+                                    <ul class="dropdown">
+                                        <li><a href="./about.html">Acerca</a></li>
+                                        <li><a href="{% url 'listingdetails' %}">Detalle de Pyme</a></li>
+                                        <li><a href="./contact.html">Contacto</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="header__menu__right">
+                            <a href="{% url 'register' %}" class="primary-btn"><i class="fa fa-plus"></i>Añadir pyme</a>
+                            <a href="#" class="login-btn"><i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Filter Begin -->
+    <div class="filter nice-scroll">
+        <div class="filter__title">
+            <h5><i class="fa fa-filter"></i> Filtro</h5>
+        </div>
+        <div class="filter__search">
+            <input type="text">
+        </div>
+        <div class="filter__select">
+            <select>
+                <option value="">Todas las categorías</option>
+                <option value="">Muebles</option>
+                <option value="">Ropa</option>
+                <option value="">Gasfitería</option>
+                <option value="">Negocio</option>
+                <option value="">Restaurant</option>
+                <option value="">Servicio tecnico</option>
+                <option value="">Empresas de telecomunicacion</option>
+
+            </select>
+        </div>
+        <div class="filter__location">
+            <input type="text" placeholder="Ubicación">
+            <i class="fa fa-map-marker"></i>
+        </div>
+        <div class="filter__radius">
+            <p>Rango:</p>
+            <div class="price-range-wrap">
+                <div class="price-range-radius ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                </div>
+                <div class="range-slider">
+                    <div class="price-input">
+                        <input type="text" id="radius">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter__price">
+            <p>Price:</p>
+            <div class="price-range-wrap">
+                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                </div>
+                <div class="range-slider">
+                    <div class="price-input">
+                        <input type="text" id="minamount" value="$1000">
+                        <input type="text" id="maxamount" value="$80000">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter__tags">
+            <h6>Tag</h6>
+            <label for="sa">
+                Populares
+                <input type="checkbox" id="sa">
+                <span class="checkmark"></span>
+            </label>
+            <label for="camping">
+                Baratos
+                <input type="checkbox" id="camping">
+                <span class="checkmark"></span>
+            </label>
+            <label for="hot-spots">
+                Cercanos
+                <input type="checkbox" id="hot-spots">
+                <span class="checkmark"></span>
+            </label>
+            <label for="internet">
+                Recomendados
+                <input type="checkbox" id="internet">
+                <span class="checkmark"></span>
+            </label>
+            <label for="tr">
+                Mejores calificados
+                <input type="checkbox" id="tr">
+                <span class="checkmark"></span>
+            </label>
+            <label for="hd">
+                Regalos
+                <input type="checkbox" id="hd">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="filter__btns">
+            <button type="submit">Resultados de filtro: </button>
+            <button type="submit" class="filter__reset">Limpiar</button>
+        </div>
+    </div>
+    <!-- Filter End -->
+
+    <!-- Listing Section Begin -->
+    <section class="listing nice-scroll">
+        <div class="listing__text__top">
+            <div class="listing__text__top__left">
+                <h5>Restaurant</h5>
+                <span>18 Resultados encontrados</span>
+            </div>
+            <div class="listing__text__top__right">Arriba hacia abajo <i class="fa fa-sort-amount-asc"></i></div>
+        </div>
+        <div class="listing__list">
+            <div class="listing__item">
+                <div class="listing__item__pic set-bg" data-setbg="https://cdn.vlnradio.cl/wp-content/uploads/2020/01/Carpinteri%CC%81a-en-Madera.jpg">
+                    <img src="data:image/png;base64,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"
+                        alt="">
+                    <div class="listing__item__pic__tag">Popular</div>
+                    <div class="listing__item__pic__btns">
+                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                        <a href="#"><span class="icon_heart_alt"></span></a>
+                    </div>
+                </div>
+                <div class="listing__item__text">
+                    <div class="listing__item__text__inside">
+                        <h5><a href="{% url 'listingdetails' %}" style="color:black;">La mueblería de Heimer</a></h5>
+                        <div class="listing__item__text__rating">
+                            <div class="listing__item__rating__star">
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star-half_alt"></span>
+                            </div>
+                            <h6>Por consultar</h6>
+                        </div>
+                        <ul>
+                            <li><span class="icon_pin_alt"></span> 236 Las nupias,Talcahuano,Región Del Bío Bío,Chile
+                            </li>
+                            <li><span class="icon_phone"></span> (+41) 4338483</li>
+                        </ul>
+                    </div>
+                    <div class="listing__item__text__info">
+                        <div class="listing__item__text__info__left">
+                            <img src="https://image.flaticon.com/icons/png/512/1965/1965180.png" alt="">
+                            <span>Muebles</span>
+                        </div>
+                        <div class="listing__item__text__info__right">Abierto ahora</div>
+                    </div>
+                </div>
+            </div>
+            <div class="listing__item">
+                <div class="listing__item__pic set-bg" data-setbg="https://upload.wikimedia.org/wikipedia/commons/e/e0/Completo_italiano.jpg">
+                    <img src="https://image.flaticon.com/icons/png/512/1868/1868638.png" alt="">
+                    <div class="listing__item__pic__tag top_rate">Mejor calificado</div>
+                    <div class="listing__item__pic__btns">
+                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                        <a href="#"><span class="icon_heart_alt"></span></a>
+                    </div>
+                </div>
+                <div class="listing__item__text">
+                    <div class="listing__item__text__inside">
+                        <h5>Bajón de la tía Juanita</h5>
+                        <div class="listing__item__text__rating">
+                            <div class="listing__item__rating__star">
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star-half_alt"></span>
+                            </div>
+                            <h6>$2.000 - $12.000</h6>
+                        </div>
+                        <ul>
+                            <li><span class="icon_pin_alt"></span> 2494 Los condominios,Talcahuano,Región Del Bío Bío,Chile
+                            </li>
+                            <li><span class="icon_phone"></span> (+56) 9xxxxxxx</li>
+                        </ul>
+                    </div>
+                    <div class="listing__item__text__info">
+                        <div class="listing__item__text__info__left">
+                            <img src="{% static 'img/listing/list_small_icon-2.png' %}" alt="">
+                            <span>Comida y bebestibles</span>
+                        </div>
+                        <div class="listing__item__text__info__right closed">Cerrado</div>
+                    </div>
+                </div>
+            </div>
+            <div class="listing__item">
+                <div class="listing__item__pic set-bg" data-setbg="https://www.sodimac.cl/static/contenido/serviciohogar/images/service/vit1-maestro-gasfiter.jpg">
+                    <img src="https://gasfiterprofesionales.cl/wp-content/uploads/2020/10/Gasfiter-Master.png" alt="">
+                    <div class="listing__item__pic__tag">Popular</div>
+                    <div class="listing__item__pic__btns">
+                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                        <a href="#"><span class="icon_heart_alt"></span></a>
+                    </div>
+                </div>
+                <div class="listing__item__text">
+                    <div class="listing__item__text__inside">
+                        <h5>Gasfiter Pedrito</h5>
+                        <div class="listing__item__text__rating">
+                            <div class="listing__item__rating__star">
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star-half_alt"></span>
+                            </div>
+                            <h6>Por consultar</h6>
+                        </div>
+                        <ul>
+                            <li><span class="icon_pin_alt"></span> Los tortulios 3943, Talcahuano,Región Del Bío Bío,Chile
+                            </li>
+                            <li><span class="icon_phone"></span> +56 9483xxxx</li>
+                        </ul>
+                    </div>
+                    <div class="listing__item__text__info">
+                        <div class="listing__item__text__info__left">
+                            <img src="https://image.flaticon.com/icons/png/512/2282/2282363.png" alt="">
+                            <span>Ferretería</span>
+                        </div>
+                        <div class="listing__item__text__info__right closed">Cerrado</div>
+                    </div>
+                </div>
+            </div>
+            <div class="listing__item">
+                <div class="listing__item__pic set-bg" data-setbg="https://cdn2.josefacchin.com/wp-content/uploads/2014/10/Social-Media-para-negocios-locales-peque%C3%B1os.jpg">
+                    <img src="https://image.flaticon.com/icons/png/512/630/630746.png" alt="">
+                    <div class="listing__item__pic__tag">Popular</div>
+                    <div class="listing__item__pic__btns">
+                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                        <a href="#"><span class="icon_heart_alt"></span></a>
+                    </div>
+                </div>
+                <div class="listing__item__text">
+                    <div class="listing__item__text__inside">
+                        <h5>Negocio Pedro Juan y Pato</h5>
+                        <div class="listing__item__text__rating">
+                            <div class="listing__item__rating__star">
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star-half_alt"></span>
+                            </div>
+                            <h6>NO HAY PRODUCTOS</h6>
+                        </div>
+                        <ul>
+                            <li><span class="icon_pin_alt"></span> Maria antonieta 394,Talcahuano,Región Del Bío Bío,Chile
+                            </li>
+                            <li><span class="icon_phone"></span> (+41) 49435834xx</li>
+                        </ul>
+                    </div>
+                    <div class="listing__item__text__info">
+                        <div class="listing__item__text__info__left">
+                            <img src="https://freeiconshop.com/wp-content/uploads/edd/shopping-bag-flat.png" alt="">
+                            <span>Negocio</span>
+                        </div>
+                        <div class="listing__item__text__info__right">Abierto ahora</div>
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+    <!-- Listing Section End -->
+
+    <!-- Map Begin -->
+    <div class="listing__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.9178046068555!2d-73.06551918447792!3d-36.79652108429265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b4503c9a1735%3A0x3fc32996839e6986!2sDUOC%20UC!5e0!3m2!1sen!2scl!4v1624664420698!5m2!1sen!2scl"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <!-- Map End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+    <script src="{% static 'js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %} "></script>
+    <script src="{% static 'js/jquery-ui.min.js' %} "></script>
+    <script src="{% static 'js/jquery.nicescroll.min.js' %} "></script>
+    <script src="{% static 'js/jquery.barfiller.js' %} "></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %} "></script>
+    <script src="{% static 'js/jquery.slicknav.js' %} "></script>
+    <script src="{% static 'js/owl.carousel.min.js' %} "></script>
+    <script src="{% static 'js/main.js' %} "></script>
+</body>
+
+</html>
